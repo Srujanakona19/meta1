@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #00f0ff;
+  --color-brand-purple: #7000ff;
+  --color-dark-surface: rgba(10, 10, 20, 0.7);
+  --color-dark-bg: #030305;
+}
+
+@layer base {
+  html, body, #root {
+    @apply w-full min-h-screen m-0 p-0 overflow-x-hidden bg-[var(--color-dark-bg)] text-white font-sans antialiased;
+  }
+}
+
+/* Custom scrollbar for better appearance, though overflow is hidden generally */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.glass-panel {
+  @apply bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-brand-blue)] to-[var(--color-brand-purple)];
+}
+
+.glow-effect {
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+html { scroll-behavior: smooth; }
