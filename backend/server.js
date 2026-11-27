@@ -30,7 +30,12 @@ const port = process.env.PORT || 8000;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost', 'http://localhost:5173', 'http://localhost:3000']
+   origin: [
+    'http://localhost',
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://localhost:3000'
+  ]
 }));
 app.use(express.json());
 app.use(morgan('dev')); // API logging
